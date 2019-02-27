@@ -22,8 +22,6 @@ var Word = function (currentWord) {
     };
 };
 
-console.log(`Letter: ${Letter}`);
-
 module.exports = Word;
 
 //letter object

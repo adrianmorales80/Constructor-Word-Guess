@@ -1,6 +1,51 @@
+var inquirer = require('inquirer');
 var Word = require('./Word');
 
-console.log(`Word: ${Word}`);
+//array of words to guess
+wordsArr = [
+    "The God Father",
+    "The Shawshank Redemption",
+    "Citizen Kane",
+    "Star Wars",
+    "The Lord of the Rings",
+    "The Dark Knight",
+    "12 Angry Men",
+    "Schindlers List",
+    "The Good the Bad and the Ugly",
+    "Pulp Fiction",
+    "Fight Club",
+    "Psycho",
+    "Metropolis",
+    "The Matrix",
+    "Casablanca",
+    "The Wizard of Oz",
+    "Raiders of the Lost Ark",
+    "Terminator",
+    "Seven Samurai",
+    "Vertigo",
+    "Forrest Gump",
+];
+
+var guessCount = 10;
+
+inquirer
+  .prompt([
+      {
+          type: "input",
+          name: 'question',
+          message: 'Guess the movie title!'
+        }
+    ])
+    .then(ans => {
+        //console.log(ans.question);
+        if (guessCount > 0) {
+            //Ask next question if no more characters left to reveal
+
+        } else {
+
+        }
+        
+  });
 
 //letter object
     //constructor that displays underlying character or blank place holder depending on user guess

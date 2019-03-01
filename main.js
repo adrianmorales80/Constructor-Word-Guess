@@ -10,7 +10,7 @@ wordsArr = [
     "The Lord of the Rings",
     "The Dark Knight",
     "12 Angry Men",
-    "Schindlers List",
+    "Schindler's List",
     "The Good the Bad and the Ugly",
     "Pulp Fiction",
     "Fight Club",
@@ -26,7 +26,7 @@ wordsArr = [
     "Forrest Gump",
 ];
 
-var guessCount = 5;
+var guessCount = 2;
 
 var askQuestion = function () {
     if (guessCount > 0) {
@@ -39,9 +39,15 @@ var askQuestion = function () {
         ])
         .then(ans => {
             console.log(ans.question);
-            guessCount--;
-            console.log(guessCount);
-            askQuestion();
+            //var rand = Math.floor(Math.random() * 22);
+            var currentWord = new Word(wordsArr[7]);
+            console.log(currentWord);
+            //call reveal character on letter, save to var, and call it to next letter 
+            // currentWord.pushToWordLetters();
+            // console.log(currentWord.wordLetters);
+            //guessCount--;
+            //console.log(guessCount);
+            //askQuestion();
 
         });
 

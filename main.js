@@ -26,26 +26,31 @@ wordsArr = [
     "Forrest Gump",
 ];
 
-var guessCount = 10;
+var guessCount = 5;
 
-inquirer
-  .prompt([
-      {
-          type: "input",
-          name: 'question',
-          message: 'Guess the movie title!'
-        }
-    ])
-    .then(ans => {
-        //console.log(ans.question);
-        if (guessCount > 0) {
-            //Ask next question if no more characters left to reveal
+var askQuestion = function () {
+    if (guessCount > 0) {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: 'question',
+                message: 'Guess the movie title!'
+            }
+        ])
+        .then(ans => {
+            console.log(ans.question);
+            guessCount--;
+            console.log(guessCount);
+            askQuestion();
 
-        } else {
+        });
 
-        }
-        
-  });
+    } else {
+        console.log("Game Over!");
+    }
+};
+
+askQuestion();
 
 //letter object
     //constructor that displays underlying character or blank place holder depending on user guess

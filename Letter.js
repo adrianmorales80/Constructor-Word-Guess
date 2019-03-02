@@ -14,8 +14,12 @@ var Letter = function (char, correctResp) {
     };
     //function that compares character passed to underlyng character, and updates boolean if guessed correctly
     this.checkResp = function (userCharGuess) {
-        if (this.char.toLowercase() === userCharGuess.toLowerCase()) {
+        if (char.toLowerCase() === userCharGuess.toLowerCase()) {
             this.correctResp = true;
+            this.revealChar();
+            return 'correct';
+        } else {
+            return 'incorrect';
         }
     };
 };

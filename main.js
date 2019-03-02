@@ -27,13 +27,13 @@ var wordsArr = [
     "Forrest Gump",
 ];
 
-var guessCount = 2;
+var guessCount = 10;
 
 var askQuestion = function () {
     if (guessCount > 0) {
-        //var rand = Math.floor(Math.random() * 22);
-        currentWord = new Word(wordsArr[7]);
-        console.log(currentWord.letterJoin());
+        var rand = Math.floor(Math.random() * 22);
+        currentWord = new Word(wordsArr[rand]);
+        console.log(`Guesses remaining ${guessCount}`, `${currentWord.letterJoin()}`);
         inquirer.prompt([
             {
                 type: "input",
@@ -42,15 +42,14 @@ var askQuestion = function () {
             }
         ])
         .then(ans => {
-            console.log(ans.question);
-            console.log(currentWord);
-            console.log(currentWord.wordLetters.length);
+            console.log(currentWord.callCheckResp(ans.question), currentWord.letterJoin());
             //console.log(currentWord.wordLetters[15].char);
-           // console.log(currentWord.callCheckResp(ans.question));
+            //console.log(currentWord.callCheckResp(ans.question));
             //call reveal character on letter, save to var, and call it to next letter 
             //guessCount--;
             //console.log(guessCount);
-            //askQuestion();
+            guessCount--;
+            askQuestion();
 
         });
 

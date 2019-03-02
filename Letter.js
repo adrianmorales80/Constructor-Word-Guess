@@ -6,7 +6,7 @@ var Letter = function (char, correctResp) {
     this.correctResp = correctResp;
     //function returning an underlying character if guessed, or underscore if not
     this.revealChar = function () {
-        if (this.correctGuess) {
+        if (this.correctResp) {
             return this.char;
         } else {
             return '_';

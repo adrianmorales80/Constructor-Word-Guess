@@ -11,12 +11,13 @@ var Word = function (word) {
             this.wordLetters.push(new Letter(word.charAt(i), false));
         }
     }
-    console.log(this.wordLetters);
     //function returning string of the underlying word and concatenate those together
     this.letterJoin = function () {
+        var letters = [];
         for (var i = 0; i < this.wordLetters.length; i++) {
-        return `${this.wordLetters[i]} ${this.wordLetters[i + 1]}`;
+            letters.push(this.wordLetters[i].revealChar()); 
         }
+        console.log(letters.join(" "));
     };
     //function that takes a character and calls the guess function on each letter object
     this.callCheckResp = function (userCharGuess) {
@@ -27,7 +28,3 @@ var Word = function (word) {
 };
 
 module.exports = Word;
-
-// var testWord = new Word("yo world");
-// testWord.pushToWordLetters();
-// console.log(testWord.wordLetters);

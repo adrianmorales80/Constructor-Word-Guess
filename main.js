@@ -42,9 +42,12 @@ var askQuestion = function () {
             //var rand = Math.floor(Math.random() * 22);
             var currentWord = new Word(wordsArr[7]);
             console.log(currentWord);
+            console.log(currentWord.wordLetters.length);
+            //console.log(currentWord.wordLetters[15].char);
+            console.log(currentWord.letterJoin());
+           // console.log(currentWord.callCheckResp(ans.question));
+            //console.log(currentWord.split('');
             //call reveal character on letter, save to var, and call it to next letter 
-            // currentWord.pushToWordLetters();
-            // console.log(currentWord.wordLetters);
             //guessCount--;
             //console.log(guessCount);
             //askQuestion();

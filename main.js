@@ -1,8 +1,9 @@
 var inquirer = require('inquirer');
 var Word = require('./Word');
 
+var currentWord;
 //array of words to guess
-wordsArr = [
+var wordsArr = [
     "The God Father",
     "The Shawshank Redemption",
     "Citizen Kane",
@@ -30,6 +31,9 @@ var guessCount = 2;
 
 var askQuestion = function () {
     if (guessCount > 0) {
+        //var rand = Math.floor(Math.random() * 22);
+        currentWord = new Word(wordsArr[7]);
+        console.log(currentWord.letterJoin());
         inquirer.prompt([
             {
                 type: "input",
@@ -39,14 +43,10 @@ var askQuestion = function () {
         ])
         .then(ans => {
             console.log(ans.question);
-            //var rand = Math.floor(Math.random() * 22);
-            var currentWord = new Word(wordsArr[7]);
             console.log(currentWord);
             console.log(currentWord.wordLetters.length);
             //console.log(currentWord.wordLetters[15].char);
-            console.log(currentWord.letterJoin());
            // console.log(currentWord.callCheckResp(ans.question));
-            //console.log(currentWord.split('');
             //call reveal character on letter, save to var, and call it to next letter 
             //guessCount--;
             //console.log(guessCount);
